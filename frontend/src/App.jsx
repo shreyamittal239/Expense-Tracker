@@ -8,6 +8,7 @@ import SplitExpense from "./pages/SplitExpense";
 import NotFound from "./pages/NotFound";
 import AddExpense from "./pages/AddExpense";
 import EditExpense from "./pages/EditExpense";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 
@@ -20,15 +21,22 @@ function App() {
    <Routes>
 
       {/* Public Routes */}
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
       {/* Protected Routes */}
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/expenses" element={<Expenses />} />
-      <Route path="/add-expense" element={<AddExpense />} />
+      <Route
+    path="/dashboard"
+    element={
+        <ProtectedRoute>
+            <Dashboard />
+        </ProtectedRoute>
+    }
+/>
+      <Route path="/expenses" element={ <ProtectedRoute><Expenses /></ProtectedRoute>} />
+      <Route path="/add-expense" element={<ProtectedRoute><AddExpense /></ProtectedRoute>} />
       <Route path="/split-expense" element={<SplitExpense />} />
-      <Route path="/edit-expense/:id" element={<EditExpense />} />
+      <Route path="/edit-expense/:id" element={<ProtectedRoute><EditExpense /></ProtectedRoute>} />
       
 
       {/* 404 */}
