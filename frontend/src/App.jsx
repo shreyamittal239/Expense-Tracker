@@ -3,7 +3,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Expenses from "./pages/Expenses";
-import ExpenseCard from "./components/ExpenseCard";
+import DashboardCard from "./components/DashboardCard";
 import SplitExpense from "./pages/SplitExpense";
 import NotFound from "./pages/NotFound";
 import AddExpense from "./pages/AddExpense";
