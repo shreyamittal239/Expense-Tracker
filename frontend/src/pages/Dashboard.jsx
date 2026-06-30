@@ -4,9 +4,12 @@ import { useContext } from 'react';
 import AuthContext from '../context/AuthProvider';
 import { useEffect, useState } from "react";
 import api from "../services/api";
+import { useNavigate } from "react-router-dom";
 
 
 const Dashboard = () => {
+
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
     console.log(user);
 
@@ -77,7 +80,7 @@ const Dashboard = () => {
              
 </div>
 
- <h2 className="text-2xl font-bold mt-10 mb-5">
+ <h2 className="text-2xl font-bold mt-10 mb-5 ">
     Recent Expenses
         </h2>
 
@@ -127,6 +130,13 @@ const Dashboard = () => {
 
         )
     }
+
+    <button
+    onClick={() => navigate("/add-expense")}
+    className="bg-blue-600 text-white px-5 py-2 rounded mb-5 my-10"
+>
+    Add Expense
+</button>
 
 </div>
        

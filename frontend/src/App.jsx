@@ -6,6 +6,9 @@ import Expenses from "./pages/Expenses";
 import ExpenseCard from "./components/ExpenseCard";
 import SplitExpense from "./pages/SplitExpense";
 import NotFound from "./pages/NotFound";
+import AddExpense from "./pages/AddExpense";
+import EditExpense from "./pages/EditExpense";
+
 
 
 
@@ -23,7 +26,10 @@ function App() {
       {/* Protected Routes */}
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/expenses" element={<Expenses />} />
+      <Route path="/add-expense" element={<AddExpense />} />
       <Route path="/split-expense" element={<SplitExpense />} />
+      <Route path="/edit-expense/:id" element={<EditExpense />} />
+      
 
       {/* 404 */}
       <Route path="*" element={<NotFound />} />
