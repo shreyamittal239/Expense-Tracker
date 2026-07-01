@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound";
 import AddExpense from "./pages/AddExpense";
 import EditExpense from "./pages/EditExpense";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import { Navigate } from "react-router-dom";
 
 
 
@@ -22,6 +22,7 @@ function App() {
 
       {/* Public Routes */}
       <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/register" element={<Register />} />
 
       {/* Protected Routes */}
